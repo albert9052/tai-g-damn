@@ -1,0 +1,27 @@
+@use "variable.scss" as var;
+
+.title {
+  position: relative;
+  height: var.$title__height;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: var.$title__margin;
+  z-index: 2;
+
+  .title__logo-image {
+    height: var.$title__height;
+    width: auto;
+    margin: 0 var.$title__space 0 0;
+  }
+
+  .title__name {
+    font-size: 1.42rem;
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    margin: auto 0;
+  }
+}

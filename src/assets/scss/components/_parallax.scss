@@ -1,0 +1,124 @@
+@use "variable.scss" as var;
+
+.parallax {
+  height: 500px; /* fallback for older browsers */
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: var.$parallax__perspective;
+  perspective: var.$parallax__perspective;
+}
+
+.parallax__group {
+  position: relative;
+  height: 500px; /* fallback for older browsers */
+  height: 100vh;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.parallax__group {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+.parallax__group--second {
+  height: 100vh;
+  min-height: 900px;
+  margin-top: -25vh;
+}
+
+.parallax__layer--forefront {
+  -webkit-transform: translateZ(var.$parallax__forefront__translateZ)
+    scale(
+      calc(
+        1 + (var.$parallax__forefront__translateZ * -1) /
+          var.$parallax__perspective
+      )
+    );
+  transform: translateZ(var.$parallax__forefront__translateZ)
+    scale(
+      calc(
+        1 + (var.$parallax__forefront__translateZ * -1) /
+          var.$parallax__perspective
+      )
+    );
+  left: 5px;
+  z-index: 1;
+}
+
+.parallax__layer--fore {
+  -webkit-transform: translateZ(var.$parallax__fore__translateZ)
+    scale(
+      calc(
+        1 + (var.$parallax__fore__translateZ * -1) / var.$parallax__perspective
+      )
+    );
+  transform: translateZ(var.$parallax__fore__translateZ)
+    scale(
+      calc(
+        1 + (var.$parallax__fore__translateZ * -1) / var.$parallax__perspective
+      )
+    );
+  left: 2px;
+  z-index: 2;
+}
+
+.parallax__layer--base {
+  -webkit-transform: translateZ(var.$parallax__base__translateZ)
+    scale(
+      calc(
+        1 + (var.$parallax__base__translateZ * -1) / var.$parallax__perspective
+      )
+    );
+  transform: translateZ(var.$parallax__base__translateZ)
+    scale(
+      calc(
+        1 + (var.$parallax__base__translateZ * -1) / var.$parallax__perspective
+      )
+    );
+  z-index: 5;
+}
+
+.parallax__layer--back {
+  -webkit-transform: translateZ(var.$parallax__back__translateZ)
+    scale(
+      calc(
+        1 + (var.$parallax__back__translateZ * -1) / var.$parallax__perspective
+      )
+    );
+  transform: translateZ(var.$parallax__back__translateZ)
+    scale(
+      calc(
+        1 + (var.$parallax__back__translateZ * -1) / var.$parallax__perspective
+      )
+    );
+  left: -8px;
+  z-index: 4;
+}
+
+.parallax__layer--deep {
+  -webkit-transform: translateZ(var.$parallax__deep__translateZ)
+    scale(
+      calc(
+        1 + (var.$parallax__deep__translateZ * -1) / var.$parallax__perspective +
+          0.05
+      )
+    );
+  transform: translateZ(var.$parallax__deep__translateZ)
+    scale(
+      calc(
+        1 + (var.$parallax__deep__translateZ * -1) / var.$parallax__perspective +
+          0.05
+      )
+    );
+  z-index: 3;
+}

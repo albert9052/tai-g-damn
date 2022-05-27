@@ -1,0 +1,48 @@
+$color__primary: #ffffff;
+$color__primary--darker: #dfdfdf;
+$color__secondary: #000000;
+$color__tertiary: #eb5a10;
+$color__tertiary--lighter: #fe7a30;
+
+$top-bar__height: 12rem;
+
+$side-bar-button-opening__icon__height: 2.67rem;
+$side-bar-button-opening-and-closing__top-offset: 4.46rem;
+$side-bar-button-opening-and-closing__right-offset: 4.4rem;
+
+$title__height: 3.18rem;
+$title__margin--top: 3rem;
+$title__margin--right: 0rem;
+$title__margin--bottom: 3rem;
+$title__margin--left: 6.07rem;
+$title__margin: $title__margin--top $title__margin--right $title__margin--bottom
+  $title__margin--left;
+$title__space: 1.6rem;
+
+$news-cards-num--max: 4;
+$news-cards-num--1600px: 3;
+$news-cards-num--1200px: 2;
+$news-cards-num--650px: 1;
+
+$parallax__perspective: 300px;
+$parallax__forefront__translateZ: 200px;
+$parallax__fore__translateZ: 90px;
+$parallax__base__translateZ: 0px;
+$parallax__back__translateZ: -300px;
+$parallax__deep__translateZ: -600px;
+
+$side-bar__width: 30rem;
+$side-bar__max-width: 70%;
+
+$dish-card-container__padding: 0 0 7rem 0;
+
+$dish-card__min-width: 30rem;
+$dish-card__height: auto;
+$dish-card__aspect-radio: 47 / 20;
+$dish-card__space-between: 2.5rem;
+$dish-card__border-radius: 0.5rem;
+$dish-card--set__aspect-radio: 421 / 100;
+$dish-card--set__space-between: 4rem;
+
+$menu-page-content__padding-top-and-down: 3rem;
+$menu-page-content__margin: 0 0 3rem 0;

@@ -1,0 +1,76 @@
+@use "variable.scss" as var;
+
+.story-page {
+  min-height: calc(100% - var.$top-bar__height);
+  height: fit-content;
+  width: 100%;
+  padding: 0 4.4rem 0 4.4rem;
+  box-sizing: border-box;
+  background-image: url("~@/assets/tempPicture1.png");
+
+  .story-page-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: fit-content;
+    margin: 0;
+    padding: 3.2rem 0 2.5rem 0;
+    box-sizing: border-box;
+
+    .story-page-title__icon {
+      height: 3.36rem;
+      width: auto;
+      margin: 0 0.5rem 0 0;
+    }
+
+    .story-page-title__name {
+      font-size: 1.8rem;
+    }
+  }
+
+  .story-page-content {
+    max-width: calc(100% - 10%);
+    width: 55rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    .story-page-content__text {
+      width: 100%;
+      height: fit-content;
+      text-align: left;
+      font-size: 2.6rem;
+      line-height: 4.13rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .story-page {
+    .story-page-content {
+      .story-page-content__text {
+        font-size: 2rem;
+        line-height: 3.2rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .story-page {
+    .story-page-content {
+      .story-page-content__text {
+        font-size: 1.3rem;
+        line-height: 2.2rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .story-page {
+    padding: 0 5% 0 5%;
+  }
+}

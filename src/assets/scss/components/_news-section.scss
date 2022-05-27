@@ -1,0 +1,13 @@
+@use "variable.scss" as var;
+
+.news-section {
+  width: 100%;
+  height: 100%;
+  //margin-top: calc(
+  //  100rem *
+  //    (
+  //      1 + (var.$parallax__forefront__translateZ * -1) /
+  //        var.$parallax__perspective
+  //    )
+  //);
+}

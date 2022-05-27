@@ -1,0 +1,85 @@
+@use "variable.scss" as var;
+
+.top-bar {
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: var.$top-bar__height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var.$color__primary;
+  padding: 0 4.4rem;
+  box-sizing: border-box;
+  z-index: 1;
+  animation-name: slide-in;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+
+  &--visible {
+    transition: top 0.2s linear;
+    top: 0;
+  }
+
+  &--hidden {
+    transition: top 0.1s linear;
+    top: calc(var.$top-bar__height * -1);
+  }
+
+  .top-bar__bottom-line {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 0.5rem;
+    width: calc(100vw - 4rem);
+    min-width: calc(100vw - 10%);
+    margin: 0 auto;
+    background-color: var.$color__tertiary;
+  }
+
+  .side-bar-button-opening-container {
+    // This is for excluding the scrolling bar
+    position: static;
+    width: fit-content;
+    height: fit-content;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    visibility: hidden;
+
+    .side-bar-button-opening {
+      position: static;
+      height: fit-content;
+      width: fit-content;
+      background-color: transparent;
+      border: none;
+      visibility: visible;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active {
+      }
+
+      .side-bar-button-opening__icon {
+        height: var.$side-bar-button-opening__icon__height;
+        width: auto;
+      }
+    }
+  }
+
+  .side-bar-button-logo {
+    height: 7rem;
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &__icon {
+      height: 100%;
+      width: auto;
+    }
+  }
+}

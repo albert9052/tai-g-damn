@@ -1,0 +1,112 @@
+@use "variable.scss" as var;
+
+.recommendation-section {
+  height: 100vh;
+  width: 100%;
+
+  .recommendation-section__scrolling-area {
+    height: calc(
+      (
+        100% - var.$title__height - var.$title__margin--top -
+          var.$title__margin--bottom
+      )
+    );
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    .recommendation-section__wrapper {
+      position: relative;
+      top: -5rem;
+      height: 120%;
+      width: fit-content;
+      margin: 0 auto;
+
+      .recommendation-section__button {
+        position: absolute;
+        background-color: transparent;
+        border: none;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &--exam {
+          top: 28%;
+          left: 6%;
+          height: 24%;
+          width: 15%;
+        }
+
+        &--lover {
+          top: 26%;
+          left: 22%;
+          height: 26%;
+          width: 17%;
+        }
+
+        &--single {
+          top: 28%;
+          left: 40%;
+          height: 23%;
+          width: 10%;
+        }
+
+        &--seasick {
+          top: 32%;
+          left: 51%;
+          height: 19%;
+          width: 12.5%;
+        }
+
+        &--party {
+          top: 30%;
+          left: 64%;
+          height: 20%;
+          width: 23.5%;
+        }
+      }
+
+      .recommendation-section__bubble-text {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 12%;
+        width: 13%;
+        background-color: transparent;
+        border: none;
+
+        &--exam {
+          top: 14%;
+          left: 9%;
+        }
+
+        &--lover {
+          top: 14%;
+          left: 25.2%;
+        }
+
+        &--single {
+          top: 14%;
+          left: 39.5%;
+        }
+
+        &--seasick {
+          top: 14%;
+          left: 51%;
+        }
+
+        &--party {
+          top: 14%;
+          left: 68.2%;
+        }
+      }
+
+      .recommendation-section__img {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+}

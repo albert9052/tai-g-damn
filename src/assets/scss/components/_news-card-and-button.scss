@@ -1,0 +1,150 @@
+@use "variable.scss" as var;
+
+.news-card-and-button {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+
+  .news-wrapper {
+    --showCard: 0;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    left: calc(-100vw / var.$news-cards-num--max * var(--showCard));
+    .news-card {
+      position: relative;
+      width: calc(100vw / var.$news-cards-num--max);
+      height: fit-content;
+      display: inline-block;
+
+      &--hidden {
+        display: none;
+      }
+
+      &__image-background {
+        width: 100%;
+        height: auto;
+        min-height: calc(
+          (
+              max(100vh, 900px) - var.$title__margin--top -
+                var.$title__margin--bottom - var.$title__height
+            ) * 0.8
+        );
+        max-height: calc(
+          (
+              max(100vh, 900px) - var.$title__margin--top -
+                var.$title__margin--bottom - var.$title__height
+            ) * 0.95
+        );
+        box-sizing: border-box;
+      }
+
+      &__content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto auto;
+        text-align: center;
+        width: fit-content;
+        height: fit-content;
+      }
+    }
+  }
+
+  .news-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: fit-content;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    border: none;
+    background: radial-gradient(
+      ellipse closest-side at center,
+      var.$color__primary,
+      transparent
+    );
+    cursor: pointer;
+    padding: 2rem;
+    box-sizing: content-box;
+    transition: all 0.1s linear;
+    border-radius: 100%;
+
+    &:hover {
+      .news-button__icon {
+        filter: brightness(1.2);
+      }
+    }
+
+    &.news-button--right {
+      right: 0;
+
+      &:hover {
+        right: -0.5rem;
+      }
+
+      .news-button__icon {
+        left: 0.5rem;
+      }
+    }
+
+    &.news-button--left {
+      left: 0;
+
+      &:hover {
+        left: -0.5rem;
+      }
+
+      .news-button__icon {
+        right: 0.5rem;
+      }
+    }
+
+    .news-button__icon {
+      position: relative;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .news-card-and-button {
+    .news-wrapper {
+      left: calc(-100vw / var.$news-cards-num--1600px * var(--showCard));
+      .news-card {
+        width: calc(100vw / var.$news-cards-num--1600px);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .news-card-and-button {
+    .news-wrapper {
+      left: calc(-100vw / var.$news-cards-num--1200px * var(--showCard));
+      .news-card {
+        width: calc(100vw / var.$news-cards-num--1200px);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .news-card-and-button {
+    .news-wrapper {
+      left: calc(-100vw / var.$news-cards-num--650px * var(--showCard));
+      .news-card {
+        width: calc(100vw / var.$news-cards-num--650px);
+      }
+    }
+  }
+}

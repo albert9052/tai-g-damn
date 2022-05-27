@@ -1,0 +1,50 @@
+@use "variable.scss" as var;
+
+.gray-overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  margin: 0;
+  z-index: 4;
+
+  &--visible {
+    display: block;
+    animation-name: fade-in;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+  }
+
+  &--before-hidden {
+    display: block;
+    opacity: 0;
+    animation-name: fade-out;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+  }
+
+  &--hidden {
+    display: none;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

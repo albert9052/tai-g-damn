@@ -1,0 +1,134 @@
+@use "variable.scss" as var;
+
+.dish-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 0 0 var.$dish-card__space-between;
+  padding: var.$dish-card-container__padding;
+
+  .dish-card {
+    position: relative;
+    width: calc(33% - var.$dish-card__space-between);
+    height: var.$dish-card__height;
+    aspect-ratio: var.$dish-card__aspect-radio;
+    background-color: var.$color__primary;
+    border-radius: var.$dish-card__border-radius;
+    margin: var.$dish-card__space-between var.$dish-card__space-between 0 0;
+    overflow: hidden;
+
+    &.dish-card--set {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: calc(100% - var.$dish-card__space-between);
+      overflow: show;
+      aspect-ratio: var.$dish-card--set__aspect-radio;
+      margin: var.$dish-card--set__space-between var.$dish-card__space-between 0
+        0;
+
+      .dish-card__content {
+        width: 70%;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        align-items: flex-start;
+
+        .dish-card__name {
+          font-size: 2rem;
+        }
+
+        .dish-card__price {
+          font-size: 1.5rem;
+        }
+
+        .dish-card__cal {
+          font-size: 1.5rem;
+        }
+
+        .dish-card__description {
+          margin: 2.5rem 0 0 0;
+          font-size: 1.2rem;
+          text-align: left;
+        }
+      }
+
+      .dish-card__img {
+        position: static;
+        width: 30%;
+        height: auto;
+      }
+    }
+
+    .dish-card__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: nowrap;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 45%;
+
+      .dish-card__name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0 0 1.5rem 0;
+        text-align: left;
+      }
+
+      .dish-card__price {
+        font-size: 1.2rem;
+        margin: 0.1rem;
+        text-align: left;
+      }
+
+      .dish-card__cal {
+        font-size: 1.2rem;
+        margin: 0.1rem;
+        text-align: left;
+      }
+    }
+
+    .dish-card__img {
+      position: absolute;
+      height: auto;
+      width: 55%;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .dish-card-container {
+    .dish-card {
+      width: calc(50% - var.$dish-card__space-between);
+
+      &.dish-card--set {
+        aspect-ratio: unset;
+        flex-direction: column;
+
+        .dish-card__content {
+          position: static;
+          width: 100%;
+          padding: 5%;
+        }
+
+        .dish-card__img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .dish-card-container {
+    .dish-card {
+      width: calc(100% - var.$dish-card__space-between);
+    }
+  }
+}

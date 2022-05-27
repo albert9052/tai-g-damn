@@ -1,0 +1,229 @@
+@use "variable.scss" as var;
+
+.side-bar-button-opening-container {
+  // This is for excluding the scrolling bar
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  visibility: hidden;
+  z-index: 3;
+
+  //.side-bar-opening-container__background {
+  //  position: absolute;
+  //  top: 0;
+  //  right: 0;
+  //  height: 14rem;
+  //  aspect-ratio: 1 / 1;
+  //  background: radial-gradient(
+  //    circle farthest-side at top right,
+  //    var.$color__primary 20%,
+  //    transparent 100%
+  //  );
+  //  visibility: visible;
+  //  border-bottom-left-radius: 100%;
+  //}
+
+  .side-bar-button-opening {
+    position: absolute;
+    top: var.$side-bar-button-opening-and-closing__top-offset;
+    right: var.$side-bar-button-opening-and-closing__right-offset;
+    height: fit-content;
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    visibility: visible;
+
+    &:hover {
+      cursor: pointer;
+
+      .side-bar-button-opening__icon {
+        filter: brightness(1.2);
+      }
+    }
+
+    &:active {
+    }
+
+    .side-bar-button-opening__icon {
+      height: var.$side-bar-button-opening__icon__height;
+      width: auto;
+    }
+  }
+}
+
+.side-bar {
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: var.$side-bar__width;
+  max-width: var.$side-bar__max-width;
+  margin: 0;
+  //background-color: var.$color__tertiary;
+  background-image: url("~@/assets/pictures/list_2.png");
+  background-size: cover;
+  z-index: 5;
+
+  &--visible {
+    display: block;
+    animation-name: slide-in;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+  }
+
+  &--before-hidden {
+    display: block;
+    right: calc(var.$side-bar__width * -1);
+    animation-name: slide-out;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+  }
+
+  &--hidden {
+    display: none;
+  }
+
+  .side-bar-button-closing-container {
+    // This is for excluding the scrolling bar
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    visibility: hidden;
+
+    .side-bar-button-closing {
+      position: absolute;
+      top: var.$side-bar-button-opening-and-closing__top-offset;
+      right: var.$side-bar-button-opening-and-closing__right-offset;
+      height: 2.67rem;
+      width: 3.2rem;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      visibility: visible;
+
+      &:hover {
+        .side-bar-button-closing__icon {
+          background-color: var.$color__primary--darker;
+
+          &:after {
+            background-color: var.$color__primary--darker;
+          }
+        }
+      }
+
+      .side-bar-button-closing__icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 3.2rem;
+        height: 0.7rem;
+        transform: rotate(45deg);
+        background-color: var.$color__primary;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto;
+          width: 3.2rem;
+          height: 0.7rem;
+          transform: rotate(-90deg);
+          background-color: var.$color__primary;
+        }
+      }
+    }
+  }
+
+  .side-bar-list {
+    position: absolute;
+    top: 14rem;
+    right: 0;
+    height: fit-content;
+    width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box;
+  }
+
+  .side-bar-list-item {
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    margin: 1rem 0 0 0;
+    border: none;
+    border-bottom: 3px solid var.$color__primary;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    //background-color: var.$color__tertiary;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      //background-color: var.$color__tertiary--lighter;
+      background-color: hsla(255, 100%, 100%, 0.2);
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .side-bar-list-item__name {
+      font-size: 1.67rem;
+      color: var.$color__primary;
+    }
+
+    .side-bar-list-item__icon {
+      height: 3.45rem;
+      width: 4rem;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+  }
+}
+
+@keyframes slide-in {
+  from {
+    right: calc(var.$side-bar__width * -1);
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    right: 0;
+  }
+  to {
+    right: calc(var.$side-bar__width * -1);
+  }
+}
+
+@media only screen and (max-height: 680px) {
+  .side-bar {
+    .side-bar-list {
+      top: calc(100% - 450px);
+    }
+  }
+}
+
+@media only screen and (max-height: 550px) {
+  .side-bar-button-closing-container {
+    display: none;
+  }
+}
