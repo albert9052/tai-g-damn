@@ -5,12 +5,14 @@
     width: 100%;
     height: 100%;
     background-attachment: fixed;
+    filter: blur(3px) brightness(0.8);
+    object-fit: cover;
   }
 
   .main-page__black-filter {
     width: 100%;
     height: 100%;
     background-color: white;
-    transform: translateZ(-600px) scale(3.06);
+    transform: translateZ(-600px) scale(3.12);
   }
 }

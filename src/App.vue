@@ -59,17 +59,18 @@ export default {
 @use "@/assets/scss/style.scss";
 @import "~chiron-hei-hk-webfont/css/vf.css";
 
-//@font-face {
-//  font-family: ChironHeiHK;
-//  src: url("@/assets/font/ChironHeiHK-H.otf") format("opentype");
-//}
+@font-face {
+  font-family: "Baoli";
+  font-display: auto;
+  src: url("@/../public/font/chinese.simli.ttf") format("truetype");
+}
 
 body {
   margin: 0;
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif, "Chiron Hei HK WS";
+  font-family: "Baoli", Avenir, Helvetica, Arial, sans-serif, "Chiron Hei HK WS";
   //font-weight: 900;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -8,7 +8,7 @@
     <button class="side-bar-button-logo" @click="goToMainPage">
       <img
         class="side-bar-button-logo__icon"
-        src="@/assets/pictures/logo/logo_2small-05.png"
+        src="@/assets/pictures/logo/logo_2sbig-10-10-10.png"
         v-show="windowWidth > 830"
       />
       <img

@@ -8,7 +8,7 @@
       <div class="parallax__group">
         <img
           class="main-page__background-image parallax__layer parallax__layer--deep"
-          src="@/assets/tempPicture1.png"
+          src="@/assets/pictures/background/mainBackground.jpg"
         />
         <div
           class="logo-section parallax__layer parallax__layer--back"

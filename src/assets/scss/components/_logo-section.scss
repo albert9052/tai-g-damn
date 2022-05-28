@@ -6,7 +6,7 @@
 
   .logo-section__logo-image {
     position: absolute;
-    max-width: 31vw;
+    max-width: 32.88rem;
     height: auto;
     width: 100%;
     left: 0;
@@ -14,5 +14,6 @@
     top: 0;
     bottom: 0;
     margin: auto;
+    filter: drop-shadow(5px 5px 10px black);
   }
 }
