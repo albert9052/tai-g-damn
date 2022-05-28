@@ -9,7 +9,7 @@
       rel="preload"
       as="font"
       href="font/chinese.simli.ttf"
-      type="font/truetype"
+      type="font/ttf"
       crossorigin="anonymous"
     />
     <title><%= htmlWebpackPlugin.options.title %></title>
@@ -25,4 +25,11 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+<style>
+@font-face {
+  font-family: "Baoli";
+  font-display: auto;
+  src: url("font/chinese.simli.ttf") format("truetype");
+}
+</style>
 </html>

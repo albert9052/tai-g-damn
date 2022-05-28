@@ -1,6 +1,7 @@
 @use "components/main-page.scss";
 @use "components/menu-page.scss";
 @use "components/story-page.scss";
+@use "components/location-page.scss";
 @use "components/top-bar.scss";
 @use "components/side-bar.scss";
 @use "components/title.scss";
@@ -15,3 +16,6 @@
 @use "components/dish-card-container.scss";
 @use "components/fade.scss";
 @use "components/button.scss";
+@use "components/loader.scss";
+@use "components/map.scss";
+@use "components/info-window.scss";

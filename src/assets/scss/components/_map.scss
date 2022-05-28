@@ -1,0 +1,14 @@
+@use "variable.scss" as var;
+
+.map {
+  flex-grow: 1;
+  height: calc(100vh - 3.36rem - 3.2rem - 3.2rem - var.$top-bar__height);
+  padding: 0 0 2rem 0;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 900px) {
+  .map {
+    width: 100%;
+  }
+}

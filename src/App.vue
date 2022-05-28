@@ -3,6 +3,7 @@
     class="router-view-container"
     v-on:scroll.passive="getScrollingDirection"
     ref="routerViewContainer"
+    v-if="loaded"
   >
     <router-view v-slot="{ Component, route }">
       <transition name="fade" mode="out-in">
@@ -15,6 +16,18 @@
         <component :is="Component" :key="route.path" />
       </transition>
     </router-view>
+  </div>
+  <div
+    class="loader"
+    :class="{
+      'loader--hidden-animation': loaded,
+      'loader--hidden': loadingAnimationEnded,
+    }"
+  >
+    <img
+      class="loader__loading-animation"
+      src="@/assets/pictures/loading/loading-chicken.gif"
+    />
   </div>
   <SideBar v-model="sideBarIsOpened" />
 </template>
@@ -34,7 +47,17 @@ export default {
       sideBarIsOpened: false,
       scrollingDirection: 0,
       lastScrollingPosition: 0,
+      loaded: false,
+      loadingAnimationEnded: false,
     };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.loaded = true;
+    }, 3000);
+    setTimeout(() => {
+      this.loadingAnimationEnded = true;
+    }, 3500);
   },
   methods: {
     getScrollingDirection() {
@@ -58,12 +81,6 @@ export default {
 <style lang="scss">
 @use "@/assets/scss/style.scss";
 @import "~chiron-hei-hk-webfont/css/vf.css";
-
-@font-face {
-  font-family: "Baoli";
-  font-display: auto;
-  src: url("@/../public/font/chinese.simli.ttf") format("truetype");
-}
 
 body {
   margin: 0;

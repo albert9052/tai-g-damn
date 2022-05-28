@@ -216,7 +216,6 @@ export default {
       }
     },
     nextCard() {
-      console.log(this.showCard, this.newsCardNum, this.news.length);
       if (this.showCard + this.newsCardNum < this.news.length) {
         this.showCard += 1;
       }
