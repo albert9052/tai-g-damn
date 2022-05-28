@@ -9,6 +9,12 @@
       <img
         class="side-bar-button-logo__icon"
         src="@/assets/pictures/logo/logo_2small-05.png"
+        v-show="windowWidth > 830"
+      />
+      <img
+        class="side-bar-button-logo__icon"
+        src="@/assets/pictures/logo/logo_1small-04.png"
+        v-show="windowWidth <= 830"
       />
     </button>
     <div class="side-bar-button-opening-container">
@@ -28,9 +34,16 @@ export default {
   data() {
     return {
       show: 0,
+      windowWidth: 0,
     };
   },
   props: ["modelValue", "scrollingDirection"],
+  mounted() {
+    this.windowWidth = window.innerWidth;
+    window.onresize = () => {
+      this.windowWidth = window.innerWidth;
+    };
+  },
   methods: {
     handleInput() {
       this.$emit("update:modelValue", !this.modelValue);
