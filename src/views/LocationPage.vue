@@ -19,27 +19,27 @@
           :key="location.id"
         >
           <div class="location__store-name">[ {{ location.storeName }} ]</div>
-          <div class="location__information-line">
-            <div class="location__information-title">地址</div>
-            <div class="location__information-content">
-              {{ location.address }}
+          <div class="location__information-container">
+            <div class="location__information-title-container">
+              <div class="location__information-title">地址</div>
+              <div class="location__information-title">電話</div>
+              <div class="location__information-title">營業時間</div>
             </div>
-          </div>
-          <div class="location__information-line">
-            <div class="location__information-title">電話</div>
-            <div class="location__information-content">
-              {{ location.phone }}
-            </div>
-          </div>
-          <div class="location__information-line">
-            <div class="location__information-title">營業時間</div>
-            <div class="location__information-multiple-contents">
-              <div
-                class="location__information-content"
-                v-for="(businessHour, index) in location.businessHours"
-                :key="index"
-              >
-                {{ businessHour }}
+            <div class="location__information-content-container">
+              <div class="location__information-content">
+                {{ location.address }}
+              </div>
+              <div class="location__information-content">
+                {{ location.phone }}
+              </div>
+              <div class="location__information-multiple-contents">
+                <div
+                  class="location__information-content"
+                  v-for="(businessHour, index) in location.businessHours"
+                  :key="index"
+                >
+                  {{ businessHour }}
+                </div>
               </div>
             </div>
           </div>

@@ -5,10 +5,11 @@
   height: 100vh;
 
   .logo-section__logo-image {
+    --width-ratio: 1;
     position: absolute;
-    max-width: 32.88rem;
+    max-width: calc(32.88rem * var(--width-ratio));
     height: auto;
-    width: 90%;
+    width: calc(90% * var(--width-ratio));
     left: 0;
     right: 0;
     top: 0;

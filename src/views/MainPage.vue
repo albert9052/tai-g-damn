@@ -17,6 +17,7 @@
           <img
             class="logo-section__logo-image"
             src="@/assets/pictures/logo/logo_1big.png"
+            :style="{ '--width-ratio': 1 - logoSectionWhiteOpacity }"
           />
         </div>
         <div
@@ -266,9 +267,8 @@ export default {
         ],
         [
           "考前積陰德套餐 期間限定優惠",
-          "即日起～6 / 17 只要 $180",
+          "即日起～ 6/17 只要 $180",
           "想要臨時抱佛腳？那就來一份素食套餐，考前積陰德，好好度過期末考吧！",
-          "",
           "備註",
           "優惠不重複，不與其他行銷活動並行。",
           "實體店面限定，不適用外送服務。",
@@ -279,15 +279,24 @@ export default {
           "成為學生最堅實的陪伴，溫暖滿滿。",
           "享用台雞Damn 的食物，幸福滿滿。",
           "想要圓一個創業夢嗎？那就趕快加入我們一同攜手圓夢吧！",
-          "讓更多人了解我們的品牌裡面，讓台雞Damn 成為台灣鹹酥雞的第一選擇！",
-          "",
+          /*"讓更多人了解我們的品牌裡面，讓台雞Damn 成為台灣鹹酥雞的第一選擇！",*/
           "加盟諮詢方式",
           "私訊 FB 粉專",
           "加盟諮詢專線：",
           "+886-2-2771-2171",
         ],
-        ["hihihihihi"],
-        ["asdg"],
+        [
+          "台雞Damn — 北科大店歡慶開幕",
+          "6/1 到 6/3 開幕期間限定",
+          "來店打卡即可獲得一份鹹酥雞",
+          "歡迎大家蒞臨本店",
+          "地址 106344 台北市大安區忠孝東路 3 段 1 號",
+          "電話 +886-2-2771-2171",
+        ],
+        [
+          "新套餐上市 我在刷牙你在開趴",
+          "即日起推出『我在刷牙你在開趴』的套餐，包含著多種不同的食物，是能在晚上找到飽足一頓的美味，刺激你的味蕾。",
+        ],
       ],
       currentNewsNum: 0,
       showCard: 0,
@@ -392,13 +401,11 @@ export default {
     previousCard() {
       if (this.showCard > 0) {
         this.showCard -= 1;
-        console.log(this.showCard);
       }
     },
     nextCard() {
       if (this.showCard + this.newsCardNum < this.news.length) {
         this.showCard += 1;
-        console.log(this.showCard);
       }
     },
     getScrollingPosition() {
