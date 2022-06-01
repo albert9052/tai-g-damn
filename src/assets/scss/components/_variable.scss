@@ -1,9 +1,10 @@
 $color__primary: #ffffff;
 $color__primary--darker: #dfdfdf;
 $color__secondary: #000000;
-$color__secondary--lighter: #777777;
+$color__secondary--lighter: #333333;
 $color__tertiary: #eb5a10;
 $color__tertiary--lighter: #fe7a30;
+$color__gray: #777777;
 
 $top-bar__height: 12rem;
 
@@ -43,7 +44,7 @@ $dish-card__aspect-radio: 47 / 20;
 $dish-card__space-between: 2.5rem;
 $dish-card__border-radius: 0.5rem;
 $dish-card--set__aspect-radio: 421 / 100;
-$dish-card--set__space-between: 4rem;
+$dish-card--set__space-between: 8rem;
 
 $menu-page-content__padding-top-and-down: 3rem;
 $menu-page-content__margin: 0 0 3rem 0;

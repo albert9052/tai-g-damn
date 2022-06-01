@@ -9,12 +9,12 @@
       <img
         class="side-bar-button-logo__icon"
         src="@/assets/pictures/logo/logo_2sbig-10-10-10.png"
-        v-show="windowWidth > 830"
+        v-show="windowWidth > 850"
       />
       <img
         class="side-bar-button-logo__icon"
         src="@/assets/pictures/logo/logo_1small-04.png"
-        v-show="windowWidth <= 830"
+        v-show="windowWidth <= 850"
       />
     </button>
     <div class="side-bar-button-opening-container">

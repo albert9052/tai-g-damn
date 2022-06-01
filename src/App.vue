@@ -82,6 +82,10 @@ export default {
 @use "@/assets/scss/style.scss";
 @import "~chiron-hei-hk-webfont/css/vf.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
 }

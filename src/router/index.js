@@ -3,6 +3,11 @@ import MainPage from "../views/MainPage.vue";
 import MenuPage from "../views/MenuPage.vue";
 import StoryPage from "../views/StoryPage.vue";
 import LocationPage from "../views/LocationPage.vue";
+import JoinUsPage from "../views/JoinUsPage.vue";
+import JoinUsSharedCase from "../views/JoinUsChildren/JoinUsSharedCase.vue";
+import JoinUsJoiningRequirements from "../views/JoinUsChildren/JoinUsJoiningRequirements.vue";
+import JoinUsJoiningForm from "../views/JoinUsChildren/JoinUsJoiningForm.vue";
+import JoinUsJoiningProcess from "../views/JoinUsChildren/JoinUsJoiningProcess.vue";
 
 const routes = [
   {
@@ -24,6 +29,32 @@ const routes = [
     path: "/location",
     name: "location",
     component: LocationPage,
+  },
+  {
+    path: "/joinus",
+    component: JoinUsPage,
+    children: [
+      {
+        path: "",
+        component: JoinUsSharedCase,
+      },
+      {
+        path: "sharedcase",
+        component: JoinUsSharedCase,
+      },
+      {
+        path: "joiningrequirements",
+        component: JoinUsJoiningRequirements,
+      },
+      {
+        path: "joiningform",
+        component: JoinUsJoiningForm,
+      },
+      {
+        path: "joiningprocess",
+        component: JoinUsJoiningProcess,
+      },
+    ],
   },
   {
     path: "/about",

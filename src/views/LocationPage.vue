@@ -56,7 +56,7 @@
           v-for="location in locations"
           :position="location.position"
           :clickable="true"
-          :draggable="true"
+          :draggable="false"
           @click="openMarker(location.id)"
         >
           <GMapInfoWindow

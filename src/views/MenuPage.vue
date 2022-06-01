@@ -20,7 +20,10 @@
             <span class="dish-card__price">NT ${{ item.price }}</span>
             <span class="dish-card__cal">{{ item.cal }} Kcal</span>
           </div>
-          <img class="dish-card__img" :src="require(`@/assets/${item.img}`)" />
+          <img
+            class="dish-card__img"
+            :src="require(`@/assets/pictures/menu/${item.img}`)"
+          />
         </div>
       </div>
       <div class="menu-page-content__title">套餐系列</div>
@@ -36,7 +39,10 @@
             <span class="dish-card__cal">{{ item.cal }} Kcal</span>
             <span class="dish-card__description">{{ item.description }}</span>
           </div>
-          <img class="dish-card__img" :src="require(`@/assets/${item.img}`)" />
+          <img
+            class="dish-card__img"
+            :src="require(`@/assets/pictures/menu/${item.img}`)"
+          />
         </div>
       </div>
     </div>
@@ -53,79 +59,79 @@ export default {
           name: "鑫鑫腸",
           price: 35,
           cal: 300,
-          img: "tempPicture1.png",
+          img: "sausage.png",
         },
         {
           name: "鹹酥雞",
           price: 60,
           cal: 525,
-          img: "tempPicture1.png",
+          img: "chicken.png",
         },
         {
           name: "甜不辣",
           price: 35,
           cal: 350,
-          img: "tempPicture1.png",
+          img: "tempura.png",
         },
         {
           name: "銀絲卷",
           price: 40,
           cal: 280,
-          img: "tempPicture1.png",
+          img: "silk-thread_roll.png",
         },
         {
           name: "豬血糕",
           price: 35,
           cal: 340,
-          img: "tempPicture1.png",
+          img: "pig_blood_cake.png",
         },
         {
           name: "豆腐",
           price: 35,
           cal: 500,
-          img: "tempPicture1.png",
+          img: "tofu.png",
         },
         {
           name: "豆乾",
           price: 30,
           cal: 250,
-          img: "tempPicture1.png",
+          img: "tempura2.png",
         },
         {
           name: "杏鮑菇",
           price: 50,
           cal: 175,
-          img: "tempPicture1.png",
+          img: "mushroom.png",
         },
         {
           name: "玉米筍",
           price: 60,
           cal: 130,
-          img: "tempPicture1.png",
+          img: "baby_corn.png",
         },
         {
           name: "高麗菜",
           price: 35,
           cal: 100,
-          img: "tempPicture1.png",
+          img: "cabbage.png",
         },
         {
           name: "小黃瓜",
           price: 40,
           cal: 150,
-          img: "tempPicture1.png",
+          img: "cucumber.png",
         },
         {
           name: "地瓜條",
           price: 40,
           cal: 500,
-          img: "tempPicture1.png",
+          img: "sweet_potato.png",
         },
         {
           name: "玉米",
           price: 30,
           cal: 160,
-          img: "tempPicture1.png",
+          img: "corn.png",
         },
       ],
       menuSetItems: [
@@ -134,28 +140,28 @@ export default {
           price: 130,
           cal: 950,
           description: "內含：鹹酥雞、地瓜條、銀絲卷",
-          img: "tempPicture1.png",
+          img: "single.png",
         },
         {
           name: "只黏你心不黏你口",
           price: 120,
           cal: 975,
           description: "內含：鹹酥雞、鑫鑫腸、小黃瓜",
-          img: "tempPicture1.png",
+          img: "lover.png",
         },
         {
           name: "今天要吃什麼寶",
           price: 170,
           cal: 1005,
           description: "內含：鹹酥雞、鑫鑫腸、小黃瓜、豆乾、豬血糕",
-          img: "tempPicture1.png",
+          img: "seasick.png",
         },
         {
           name: "考前積陰德",
           price: 200,
           cal: 1435,
           description: "內含：地瓜條、豆乾、銀絲卷、杏鮑菇、玉米、小黃瓜",
-          img: "tempPicture1.png",
+          img: "exam.png",
         },
         {
           name: "你在刷牙我在開趴",
@@ -163,7 +169,7 @@ export default {
           cal: 2390,
           description:
             "內含：鹹酥雞、鑫鑫腸、地瓜條、玉米、小黃瓜、銀絲卷、豬血糕、豆乾、杏鮑菇",
-          img: "tempPicture1.png",
+          img: "party.png",
         },
       ],
     };

@@ -23,10 +23,10 @@
       justify-content: flex-start;
       align-items: center;
       width: calc(100% - var.$dish-card__space-between);
-      overflow: show;
       aspect-ratio: var.$dish-card--set__aspect-radio;
       margin: var.$dish-card--set__space-between var.$dish-card__space-between 0
         0;
+      overflow: visible;
 
       .dish-card__content {
         width: 70%;
@@ -54,9 +54,9 @@
       }
 
       .dish-card__img {
-        position: static;
         width: 30%;
         height: auto;
+        transform: translateY(8%);
       }
     }
 
@@ -110,15 +110,23 @@
       &.dish-card--set {
         aspect-ratio: unset;
         flex-direction: column;
+        overflow: hidden;
+        margin: calc(var.$dish-card--set__space-between / 2)
+          var.$dish-card__space-between 0 0;
 
         .dish-card__content {
           position: static;
           width: 100%;
           padding: 5%;
+          z-index: 2;
+          filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.9));
         }
 
         .dish-card__img {
           width: 100%;
+          object-fit: cover;
+          z-index: 1;
+          filter: blur(4px) brightness(0.9);
         }
       }
     }
