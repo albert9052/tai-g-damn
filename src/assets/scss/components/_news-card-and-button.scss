@@ -11,7 +11,7 @@
     width: fit-content;
     height: fit-content;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: visible;
     transition: all 0.5s ease-in-out;
     left: calc(-100% / var.$news-cards-num--max * var(--showCard));
     .news-card {

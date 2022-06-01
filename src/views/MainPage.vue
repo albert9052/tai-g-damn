@@ -392,11 +392,13 @@ export default {
     previousCard() {
       if (this.showCard > 0) {
         this.showCard -= 1;
+        console.log(this.showCard);
       }
     },
     nextCard() {
       if (this.showCard + this.newsCardNum < this.news.length) {
         this.showCard += 1;
+        console.log(this.showCard);
       }
     },
     getScrollingPosition() {
