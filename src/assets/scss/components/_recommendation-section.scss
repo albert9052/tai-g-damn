@@ -138,9 +138,20 @@
         left: 0;
         height: 15%;
         width: 90%;
-        font-size: 3rem;
-        padding: 0 1rem;
+        padding: 1rem 1rem;
         box-sizing: border-box;
+
+        .recommendation-section__set-name-text {
+          position: absolute;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          text-align: center;
+          white-space: nowrap;
+          font-size: 4rem;
+          height: 100%;
+          width: fit-content;
+        }
       }
       .recommendation-section__image {
         position: absolute;
@@ -220,6 +231,34 @@
       .recommendation-section__set-image-container {
         height: 30rem;
         width: 100%;
+
+        .recommendation-section__set-image-background {
+          width: 100%;
+        }
+
+        .recommendation-section__set-name {
+          width: 100%;
+
+          .recommendation-section__set-name-text {
+            white-space: normal;
+          }
+        }
+
+        .recommendation-section__image {
+          bottom: -4rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .recommendation-section {
+    .recommendation-section__chosen-set {
+      .recommendation-section__set-image-container {
+        .recommendation-section__image {
+          bottom: 0;
+        }
       }
     }
   }

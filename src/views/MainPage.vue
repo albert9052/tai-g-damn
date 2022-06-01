@@ -184,7 +184,9 @@
             <div class="recommendation-section__set-image-container">
               <div class="recommendation-section__set-image-background"></div>
               <div class="recommendation-section__set-name">
-                {{ confirmedSet.name }}
+                <div class="recommendation-section__set-name-text">
+                  {{ confirmedSet.name }}
+                </div>
               </div>
               <img
                 class="recommendation-section__image"
