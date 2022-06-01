@@ -112,11 +112,20 @@
     .location-page-content {
       .location-list {
         margin: 0;
+      }
+    }
+  }
+}
 
+@media only screen and (max-width: 460px) {
+  .location-page {
+    .location-page-content {
+      .location-list {
         .location {
-          .location__information-line {
-            .location__information-title {
-              margin: 0 0.5rem 0 0;
+          .location__information-container {
+            .location__information-title-container {
+              position: fixed;
+              visibility: hidden;
             }
           }
         }
